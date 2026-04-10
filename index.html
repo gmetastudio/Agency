@@ -19,9 +19,7 @@
         }
         
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow-x: hidden; }
-        
         .navbar { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); }
-        
         .hero-section {
             background: var(--gradient);
             color: white;
@@ -32,70 +30,37 @@
         .btn-primary { background: var(--blue-dark); border: none; padding: 12px 30px; border-radius: 50px; }
         .btn-outline-light { border-radius: 50px; }
 
+        /* Portfolio & Card Styles */
         .card-price {
-            border: none;
-            border-radius: 20px;
-            transition: transform 0.3s;
-            background: #f8fafc;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            height: 100%;
+            border: none; border-radius: 20px; transition: transform 0.3s;
+            background: #f8fafc; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%;
         }
         .card-price:hover { transform: translateY(-10px); border: 2px solid var(--blue-main); }
         .price-tag { color: var(--blue-dark); font-weight: bold; font-size: 1.5rem; }
 
-        .form-container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Portfolio Styles */
         .video-box {
-            position: relative;
-            width: 100%;
-            padding-bottom: 177.77%; 
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px 15px 0 0;
-            background: #000;
+            position: relative; width: 100%; padding-bottom: 177.77%; 
+            height: 0; overflow: hidden; border-radius: 15px 15px 0 0; background: #000;
         }
-        .video-box iframe {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; border: 0;
-        }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         .design-box {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px 15px 0 0;
-            background: #f0f0f0;
+            position: relative; width: 100%; padding-bottom: 100%; 
+            height: 0; overflow: hidden; border-radius: 15px 15px 0 0; background: #f0f0f0;
         }
-        .design-box img {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-        }
+        .design-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         
-        .card-porto {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            height: 100%;
-        }
+        .card-porto { border: none; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; height: 100%; }
         .card-porto:hover { transform: translateY(-10px); }
+
+        .form-container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
-                GMeta ID
-            </a>
+            <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">GMeta ID</a>
             <div class="ms-auto">
                 <a href="#contact" class="btn btn-primary btn-sm">Konsultasi Gratis</a>
             </div>
@@ -118,72 +83,41 @@
             <h2 class="fw-bold">Our Creative Portfolio</h2>
             <p class="text-muted">3 Video Viral & 3 Strategic Designs</p>
         </div>
-
         <div class="row g-4">
             <div class="col-md-4" data-aos="zoom-in">
                 <div class="card card-porto text-center">
-                    <div class="video-box">
-                        <iframe src="https://www.youtube.com/embed/WUsFh4YppGs?loop=1&playlist=WUsFh4YppGs" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-3">
-                        <span class="badge bg-danger mb-2">Short Video</span>
-                        <h6 class="fw-bold">Cinematic Property</h6>
-                    </div>
+                    <div class="video-box"><iframe src="https://www.youtube.com/embed/WUsFh4YppGs?loop=1&playlist=WUsFh4YppGs"></iframe></div>
+                    <div class="p-3"><span class="badge bg-danger mb-2">Short Video</span><h6 class="fw-bold">Cinematic Property</h6></div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="card card-porto text-center">
-                    <div class="video-box">
-                        <iframe src="https://www.youtube.com/embed/BR1HrJqd0Sk?loop=1&playlist=BR1HrJqd0Sk" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-3">
-                        <span class="badge bg-danger mb-2">Short Video</span>
-                        <h6 class="fw-bold">Tech Showcase</h6>
-                    </div>
+                    <div class="video-box"><iframe src="https://www.youtube.com/embed/BR1HrJqd0Sk?loop=1&playlist=BR1HrJqd0Sk"></iframe></div>
+                    <div class="p-3"><span class="badge bg-danger mb-2">Short Video</span><h6 class="fw-bold">Tech Showcase</h6></div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="card card-porto text-center">
-                    <div class="video-box">
-                        <iframe src="https://www.youtube.com/embed/L-QKzRQGpiE?loop=1&playlist=L-QKzRQGpiE" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-3">
-                        <span class="badge bg-danger mb-2">Short Video</span>
-                        <h6 class="fw-bold">Viral Marketing</h6>
-                    </div>
+                    <div class="video-box"><iframe src="https://www.youtube.com/embed/L-QKzRQGpiE?loop=1&playlist=L-QKzRQGpiE"></iframe></div>
+                    <div class="p-3"><span class="badge bg-danger mb-2">Short Video</span><h6 class="fw-bold">Viral Marketing</h6></div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="zoom-in">
                 <div class="card card-porto text-center">
-                    <div class="design-box">
-                        <img src="https://placehold.co/600x600?text=Design+1" alt="Design Property">
-                    </div>
-                    <div class="p-3">
-                        <span class="badge bg-primary mb-2">Design 1:1</span>
-                        <h6 class="fw-bold">Game Esport Social Media</h6>
-                    </div>
+                    <div class="design-box"><img src="https://placehold.co/600x600?text=Esport+Design" alt="Esport"></div>
+                    <div class="p-3"><span class="badge bg-primary mb-2">Design 1:1</span><h6 class="fw-bold">Game Esport Social Media</h6></div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="card card-porto text-center">
-                    <div class="design-box">
-                        <img src="https://placehold.co/600x600?text=Design+2" alt="Design Retail">
-                    </div>
-                    <div class="p-3">
-                        <span class="badge bg-info text-white mb-2">Design 1:1</span>
-                        <h6 class="fw-bold">Real Estate Marketing</h6>
-                    </div>
+                    <div class="design-box"><img src="https://placehold.co/600x600?text=Property+Design" alt="Property"></div>
+                    <div class="p-3"><span class="badge bg-info text-white mb-2">Design 1:1</span><h6 class="fw-bold">Real Estate Marketing</h6></div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="card card-porto text-center">
-                    <div class="design-box">
-                        <img src="https://placehold.co/600x600?text=Design+3" alt="Design Business">
-                    </div>
-                    <div class="p-3">
-                        <span class="badge bg-dark mb-2">Design 1:1</span>
-                        <h6 class="fw-bold">Tech Product Branding</h6>
-                    </div>
+                    <div class="design-box"><img src="https://placehold.co/600x600?text=Tech+Design" alt="Tech"></div>
+                    <div class="p-3"><span class="badge bg-dark mb-2">Design 1:1</span><h6 class="fw-bold">Tech Product Branding</h6></div>
                 </div>
             </div>
         </div>
@@ -196,12 +130,10 @@
                 <div class="col-md-4">
                     <div class="card card-price p-4 text-center">
                         <h3>Starter</h3>
-                        <p class="text-muted small">Cocok untuk UMKM Baru</p>
                         <div class="price-tag mb-3">Rp 1.999.000</div>
                         <ul class="list-unstyled text-start mb-4">
                             <li>✓ 12 Konten Feed / bulan</li>
                             <li>✓ 4 Reels / bulan</li>
-                            <li>✓ Riset Hashtag & Caption</li>
                         </ul>
                         <a href="#contact" class="btn btn-outline-primary w-100">Pilih Paket</a>
                     </div>
@@ -210,12 +142,10 @@
                     <div class="card card-price p-4 text-center border-primary shadow-lg">
                         <div class="badge bg-primary mb-2 mx-auto" style="width: fit-content;">Best Seller</div>
                         <h3>Growth</h3>
-                        <p class="text-muted small">Bisnis Ingin Naik Followers</p>
                         <div class="price-tag mb-3">Rp 3.499.000</div>
                         <ul class="list-unstyled text-start mb-4">
                             <li>✓ 20 Konten Feed / bulan</li>
                             <li>✓ 8 Reels / bulan</li>
-                            <li>✓ Script Ide & Basic Editing</li>
                         </ul>
                         <a href="#contact" class="btn btn-primary w-100">Pilih Paket</a>
                     </div>
@@ -223,12 +153,10 @@
                 <div class="col-md-4">
                     <div class="card card-price p-4 text-center">
                         <h3>Domination</h3>
-                        <p class="text-muted small">Brand Serius Scaling</p>
                         <div class="price-tag mb-3">Rp 7.499.000</div>
                         <ul class="list-unstyled text-start mb-4">
                             <li>✓ Konten Harian (30 Mix)</li>
                             <li>✓ Full Video Editing Cinematic</li>
-                            <li>✓ Ads Basic Setup</li>
                         </ul>
                         <a href="#contact" class="btn btn-outline-primary w-100">Pilih Paket</a>
                     </div>
@@ -246,23 +174,22 @@
                         
                         <form id="contactForm">
                             <input type="hidden" name="access_key" value="d05db885-aebd-434e-a86f-7c7a474a055c">
-                            <input type="checkbox" name="botcheck" style="display: none;">
-
+                            
                             <div class="mb-3">
                                 <label class="form-label">Nama Lengkap</label>
-                                <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
+                                <input type="text" name="name" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">WhatsApp / Email</label>
-                                <input type="text" name="contact" class="form-control" placeholder="0812..." required>
+                                <label class="form-label">Email / WhatsApp</label>
+                                <input type="text" name="email" class="form-control" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Jenis Bisnis</label>
-                                <input type="text" name="business" class="form-control" placeholder="Property/Retail/dll">
+                                <input type="text" name="business" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Pesan / Goals</label>
-                                <textarea name="message" class="form-control" rows="3" placeholder="Apa yang bisa kami bantu?"></textarea>
+                                <label class="form-label">Apa goals Anda?</label>
+                                <textarea name="message" class="form-control" rows="3"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 py-3">Kirim Data & Chat WhatsApp</button>
                         </form>
@@ -278,11 +205,11 @@
         AOS.init();
 
         const form = document.getElementById('contactForm');
-        const btn = form.querySelector('button');
         const output = document.getElementById('output');
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            const btn = form.querySelector('button');
             btn.innerHTML = "Sedang Mengirim...";
             btn.disabled = true;
 
@@ -292,32 +219,27 @@
 
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: json
             })
             .then(async (response) => {
                 let res = await response.json();
                 if (response.status == 200) {
-                    output.innerHTML = "<p class='text-success'>Berhasil! Mengalihkan ke WhatsApp...</p>";
+                    output.innerHTML = "<p class='text-success'>Data terkirim! Membuka WhatsApp...</p>";
                     
+                    // Logic WhatsApp Otomatis
                     const phoneNumber = "628112311550";
-                    const textWA = `Halo GMeta Creative Studio! 👋\n\nSaya baru saja mengisi form di website.\n*Nama:* ${object.name}\n*Bisnis:* ${object.business || '-'}\n\nMohon info lebih lanjut!`;
+                    const textWA = `Halo GMeta Creative Studio! 👋\n\nSaya baru saja mengisi form konsultasi.\n*Nama:* ${object.name}\n*Bisnis:* ${object.business || '-'}\n\nMohon info lebih lanjut!`;
                     const waUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(textWA)}`;
                     
-                    setTimeout(() => {
-                        window.open(waUrl, '_blank');
-                    }, 800);
-                    
+                    window.open(waUrl, '_blank');
                     form.reset();
                 } else {
-                    output.innerHTML = "<p class='text-danger'>Gagal mengirim. Silakan coba lagi.</p>";
+                    output.innerHTML = "<p class='text-danger'>Terjadi kesalahan, silakan coba lagi.</p>";
                 }
             })
             .catch(error => {
-                output.innerHTML = "<p class='text-danger'>Terjadi gangguan koneksi.</p>";
+                output.innerHTML = "<p class='text-danger'>Gagal mengirim, cek koneksi Anda.</p>";
             })
             .finally(() => {
                 btn.innerHTML = "Kirim Data & Chat WhatsApp";
