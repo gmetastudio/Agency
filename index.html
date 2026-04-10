@@ -88,9 +88,9 @@
 </head>
 <body>
 
- <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand fw-bold text-primary d-flex  align-items-center" href="#">
+      <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
         <img src="https://lh3.googleusercontent.com/d/1B5R6HVFgAF8whfHC8SSFtTdvZdJdfMRo" 
            alt="GMeta Logo" 
            height="40" 
@@ -184,7 +184,7 @@
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="card card-porto text-center">
           <div class="design-box">
-            <<img src="https://lh3.googleusercontent.com/u/0/d/1rRRMa7IYzgJ_XTcE18Adb3PRfjUjEIOQ" alt="Design Business">
+            <img src="https://lh3.googleusercontent.com/u/0/d/1rRRMa7IYzgJ_XTcE18Adb3PRfjUjEIOQ" alt="Design Business">
           </div>
           <div class="p-3">
             <span class="badge bg-dark mb-2">Design 1:1</span>
@@ -250,8 +250,6 @@
           <div class="form-container">
             <h3 class="fw-bold mb-4 text-center">Mulai Konsultasi Gratis</h3>
             <form id="contactForm">
-              <input type="hidden" name="access_key" value="d05db885-aebd-434e-a86f-7c7a474a055c">
-              
               <div class="mb-3">
                 <label class="form-label">Nama Lengkap</label>
                 <input type="text" name="nama" class="form-control" required>
@@ -298,17 +296,19 @@
       const object = Object.fromEntries(formData);
       const json = JSON.stringify(object);
 
-      fetch('https://api.web3forms.com/submit', {
+      // GANTI URL DI BAWAH INI DENGAN URL WEBHOOK DARI MAKE.COM ANDA
+      const makeWebhookUrl = 'https://hook.us2.make.com/4vtgoqnejwgljgac77k90g147l3c2w3f';
+
+      fetch(makeWebhookUrl, {
           method: 'POST',
           headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
+              'Content-Type': 'application/json'
           },
           body: json
       })
-      .then(async (response) => {
-          let res = await response.json();
-          if (response.status == 200) {
+      .then(response => {
+          // Make.com biasanya mengembalikan 200 OK jika webhook berhasil diterima
+          if (response.ok) {
               output.innerHTML = "<p class='text-success'>Data terkirim! Membuka WhatsApp...</p>";
               
               const phoneNumber = "628112311550";
@@ -328,7 +328,7 @@
               
               form.reset();
           } else {
-              output.innerHTML = "<p class='text-danger'>Terjadi kesalahan saat mengirim.</p>";
+              output.innerHTML = "<p class='text-danger'>Terjadi kesalahan saat mengirim ke server.</p>";
           }
       })
       .catch(error => {
