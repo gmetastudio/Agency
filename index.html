@@ -90,6 +90,22 @@
       background-color: var(--blue-main);
       border-color: var(--blue-main);
     }
+    /* Mengatur Opacity tulisan placeholder di semua input */
+    .form-control::placeholder {
+      color: #000; /* Warna dasar hitam */
+      opacity: 0.3; /* Tingkat transparansi (0.1 sangat tipis - 1.0 sangat tebal) */
+      font-weight: 400; /* Pastikan tidak bold */
+    }
+
+    /* Khusus untuk browser Microsoft Edge / Internet Explorer */
+    .form-control:-ms-input-placeholder {
+      opacity: 0.3;
+    }
+
+    /* Khusus untuk browser Safari/Chrome versi lama */
+    .form-control::-webkit-input-placeholder {
+      opacity: 0.3;
+    }
   </style>
 </head>
 <body>
