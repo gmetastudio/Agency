@@ -46,6 +46,7 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
 
+    /* Video Box */
     .video-box {
       position: relative;
       width: 100%;
@@ -60,6 +61,7 @@
       top: 0; left: 0; width: 100%; height: 100%; border: 0;
     }
 
+    /* Design Box */
     .design-box {
       position: relative;
       width: 100%;
@@ -82,6 +84,12 @@
       height: 100%;
     }
     .card-porto:hover { transform: translateY(-10px); }
+
+    /* Custom Checkbox Style */
+    .form-check-input:checked {
+      background-color: var(--blue-main);
+      border-color: var(--blue-main);
+    }
   </style>
 </head>
 <body>
@@ -130,7 +138,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="card card-porto text-center">
           <div class="video-box">
@@ -142,7 +149,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="card card-porto text-center">
           <div class="video-box">
@@ -166,7 +172,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="card card-porto text-center">
           <div class="design-box">
@@ -178,7 +183,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="card card-porto text-center">
           <div class="design-box">
@@ -244,67 +248,65 @@
   <section id="contact" class="py-5">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-7">
-          <div class="form-container">
-            <h3 class="fw-bold mb-4 text-center">Mulai Konsultasi Gratis</h3>
+        <div class="col-md-7 col-lg-6">
+          <div class="form-container" data-aos="fade-up">
+            <h3 class="fw-bold mb-2 text-center">Mulai Konsultasi Gratis</h3>
+            <p class="text-center text-muted mb-4">Isi data di bawah ini untuk mendapatkan proposal strategi</p>
+            
             <form id="contactForm">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label class="form-label fw-semibold">Nama Lengkap</label>
-                  <input type="text" name="nama" class="form-control" placeholder="Nama Anda" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label class="form-label fw-semibold">Email</label>
-                  <input type="email" name="email" class="form-control" placeholder="Untuk kirim proposal resmi" required>
-                </div>
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Nama Lengkap</label>
+                <input type="text" name="nama" class="form-control" placeholder="Masukkan nama Anda" required>
               </div>
-              
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label class="form-label fw-semibold">Nomor WhatsApp</label>
-                  <input type="text" name="whatsapp" class="form-control" placeholder="Contoh: 0812xxxx" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label class="form-label fw-semibold">Nama Bisnis / Brand</label>
-                  <input type="text" name="brand" class="form-control" placeholder="Nama Brand Anda" required>
-                </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Untuk pengiriman invoice/proposal resmi" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Nomor WhatsApp</label>
+                <input type="tel" name="whatsapp" class="form-control" placeholder="Contoh: 0812xxxx" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Nama Bisnis / Brand</label>
+                <input type="text" name="bisnis" class="form-control" placeholder="Agar kami bisa riset sebelum menghubungi Anda" required>
               </div>
 
               <div class="mb-3">
                 <label class="form-label fw-semibold">Jenis Bisnis</label>
-                <select name="bisnis" class="form-select" required>
-                  <option value="" selected disabled>Pilih Kategori Bisnis</option>
+                <select name="jenis_bisnis" class="form-select" required>
+                  <option value="" disabled selected>Pilih kategori bisnis...</option>
                   <option value="Property">Property</option>
                   <option value="Retail">Retail</option>
                   <option value="B2B">B2B</option>
-                  <option value="UMKM">UMKM / Jasa</option>
+                  <option value="UMKM / Jasa">UMKM / Jasa</option>
                   <option value="Lainnya">Lainnya</option>
                 </select>
               </div>
 
               <div class="mb-4">
-                <label class="form-label fw-semibold">Apa goals media sosial Anda?</label>
-                <div class="row px-2">
-                  <div class="col-6 form-check">
-                    <input class="form-check-input" type="checkbox" name="goals" value="Meningkatkan Followers" id="goal1">
-                    <label class="form-check-label small" for="goal1">Naik Followers</label>
-                  </div>
-                  <div class="col-6 form-check">
-                    <input class="form-check-input" type="checkbox" name="goals" value="Meningkatkan Penjualan" id="goal2">
-                    <label class="form-check-label small" for="goal2">Meningkatkan Sales</label>
-                  </div>
-                  <div class="col-6 form-check">
-                    <input class="form-check-input" type="checkbox" name="goals" value="Brand Awareness" id="goal3">
-                    <label class="form-check-label small" for="goal3">Brand Awareness</label>
-                  </div>
-                  <div class="col-6 form-check">
-                    <input class="form-check-input" type="checkbox" name="goals" value="Konten Lebih Profesional" id="goal4">
-                    <label class="form-check-label small" for="goal4">Rapikan Konten</label>
-                  </div>
+                <label class="form-label fw-semibold d-block">Apa goals media sosial Anda?</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="goals" value="Meningkatkan Followers" id="goal1">
+                  <label class="form-check-label" for="goal1">Meningkatkan Followers</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="goals" value="Meningkatkan Penjualan" id="goal2">
+                  <label class="form-check-label" for="goal2">Meningkatkan Penjualan</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="goals" value="Brand Awareness" id="goal3">
+                  <label class="form-check-label" for="goal3">Brand Awareness</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="goals" value="Konten Lebih Profesional" id="goal4">
+                  <label class="form-check-label" for="goal4">Konten Lebih Profesional</label>
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary w-100 py-3">Kirim Data & Chat WhatsApp</button>
+              <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">Konsultasi Sekarang melalui WhatsApp</button>
             </form>
             <div id="output" class="text-center mt-3"></div>
           </div>
@@ -323,32 +325,30 @@
       const btn = form.querySelector('button');
       const output = document.getElementById('output');
       
-      // Ambil data
       const nama = form.nama.value;
       const email = form.email.value;
-      const wa = form.whatsapp.value;
-      const brand = form.brand.value;
+      const whatsapp = form.whatsapp.value;
       const bisnis = form.bisnis.value;
+      const jenis = form.jenis_bisnis.value;
       
-      // Ambil Goals (Checklist)
-      const goals = Array.from(form.querySelectorAll('input[name="goals"]:checked'))
-                         .map(cb => cb.value)
-                         .join(", ");
+      // Ambil nilai checklist
+      const goals = Array.from(form.querySelectorAll('input[name="goals"]:checked')).map(cb => cb.value).join(', ');
       
       btn.innerHTML = "Mengirim...";
       btn.disabled = true;
 
-      // Persiapkan JSON untuk Make.com
+      // Persiapan data JSON untuk Make.com
       const object = {
         nama: nama,
         email: email,
-        whatsapp: wa,
-        brand: brand,
-        bisnis: bisnis,
+        whatsapp: whatsapp,
+        nama_bisnis: bisnis,
+        jenis_bisnis: jenis,
         goals: goals
       };
       const json = JSON.stringify(object);
 
+      // Webhook URL Make.com
       const makeWebhookUrl = 'https://hook.us2.make.com/4vtgoqnejwgljgac77k90g147l3c2w3f';
 
       fetch(makeWebhookUrl, {
@@ -358,17 +358,16 @@
       })
       .then(response => {
           if (response.ok) {
-              output.innerHTML = "<p class='text-success'>Data terkirim! Membuka WhatsApp...</p>";
+              output.innerHTML = "<p class='text-success'>Data terhasil terkirim! Membuka WhatsApp...</p>";
               
               const phoneNumber = "628112311550";
               const textWA = "Halo GMeta Creative Studio! 👋\n\n" +
-                             "Saya baru saja mengisi form di website.\n" +
+                             "Saya baru saja mengisi form konsultasi di website.\n" +
                              "*Nama:* " + nama + "\n" +
-                             "*WA:* " + wa + "\n" +
-                             "*Brand:* " + brand + "\n" +
-                             "*Bisnis:* " + bisnis + "\n" +
-                             "*Goals:* " + (goals || "-") + "\n\n" +
-                             "Mohon dibantu konsultasi ya!";
+                             "*WhatsApp:* " + whatsapp + "\n" +
+                             "*Bisnis:* " + bisnis + " (" + jenis + ")\n" +
+                             "*Goals:* " + (goals || "Belum dipilih") + "\n\n" +
+                             "Mohon info lebih lanjut ya!";
               
               const waUrl = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(textWA);
 
@@ -378,14 +377,14 @@
               
               form.reset();
           } else {
-              output.innerHTML = "<p class='text-danger'>Terjadi kesalahan saat mengirim data.</p>";
+              output.innerHTML = "<p class='text-danger'>Terjadi kesalahan saat mengirim ke server.</p>";
           }
       })
       .catch(error => {
           output.innerHTML = "<p class='text-danger'>Gagal terhubung ke server.</p>";
       })
       .finally(() => {
-          btn.innerHTML = "Konsultasi sekarang";
+          btn.innerHTML = "Konsultasi Sekarang melalui WhatsApp";
           btn.disabled = false;
       });
     });
