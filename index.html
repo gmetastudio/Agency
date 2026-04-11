@@ -85,27 +85,19 @@
     }
     .card-porto:hover { transform: translateY(-10px); }
 
-    /* Custom Checkbox Style */
     .form-check-input:checked {
       background-color: var(--blue-main);
       border-color: var(--blue-main);
     }
-    /* Mengatur Opacity tulisan placeholder di semua input */
+
     .form-control::placeholder {
-      color: #000; /* Warna dasar hitam */
-      opacity: 0.3; /* Tingkat transparansi (0.1 sangat tipis - 1.0 sangat tebal) */
-      font-weight: 400; /* Pastikan tidak bold */
+      color: #000; 
+      opacity: 0.3; 
+      font-weight: 400; 
     }
 
-    /* Khusus untuk browser Microsoft Edge / Internet Explorer */
-    .form-control:-ms-input-placeholder {
-      opacity: 0.3;
-    }
-
-    /* Khusus untuk browser Safari/Chrome versi lama */
-    .form-control::-webkit-input-placeholder {
-      opacity: 0.3;
-    }
+    .form-control:-ms-input-placeholder { opacity: 0.3; }
+    .form-control::-webkit-input-placeholder { opacity: 0.3; }
   </style>
 </head>
 <body>
@@ -227,7 +219,7 @@
               <li>✓ 4 Reels / bulan</li>
               <li>✓ Riset Hashtag & Caption</li>
             </ul>
-            <a href="#contact" class="btn btn-outline-primary">Pilih Paket</a>
+            <button onclick="pilihPaket('Starter')" class="btn btn-outline-primary w-100">Pilih Paket</button>
           </div>
         </div>
         <div class="col-md-4">
@@ -241,7 +233,7 @@
               <li>✓ 8 Reels / bulan</li>
               <li>✓ Script Ide & Basic Editing</li>
             </ul>
-            <a href="#contact" class="btn btn-primary">Pilih Paket</a>
+            <button onclick="pilihPaket('Growth')" class="btn btn-primary w-100">Pilih Paket</button>
           </div>
         </div>
         <div class="col-md-4">
@@ -254,7 +246,7 @@
               <li>✓ Full Video Editing Cinematic</li>
               <li>✓ Ads Basic Setup</li>
             </ul>
-            <a href="#contact" class="btn btn-outline-primary">Pilih Paket</a>
+            <button onclick="pilihPaket('Domination')" class="btn btn-outline-primary w-100">Pilih Paket</button>
           </div>
         </div>
       </div>
@@ -266,7 +258,7 @@
       <div class="row justify-content-center">
         <div class="col-md-7 col-lg-6">
           <div class="form-container" data-aos="fade-up">
-            <h3 class="fw-bold mb-2 text-center">Mulai Konsultasi Gratis</h3>
+            <h3 class="fw-bold mb-2 text-center" id="formTitle">Mulai Konsultasi Gratis</h3>
             <p class="text-center text-muted mb-4">Isi data di bawah ini untuk mendapatkan proposal strategi</p>
             
             <form id="contactForm">
@@ -334,6 +326,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init();
+
+    let paketDipilih = ""; // Variabel untuk menyimpan pilihan paket
+
+    // Fungsi Klik Paket
+    function pilihPaket(namaPaket) {
+      paketDipilih = namaPaket;
+      // Scroll ke form
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      // Ubah judul form agar user tahu paketnya terpilih
+      document.getElementById('formTitle').innerHTML = "Konsultasi Paket " + namaPaket;
+      document.getElementById('formTitle').classList.add('text-primary');
+    }
     
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -347,41 +351,43 @@
       const bisnis = form.bisnis.value;
       const jenis = form.jenis_bisnis.value;
       
-      // Ambil nilai checklist
       const goals = Array.from(form.querySelectorAll('input[name="goals"]:checked')).map(cb => cb.value).join(', ');
       
       btn.innerHTML = "Mengirim...";
       btn.disabled = true;
 
-      // Persiapan data JSON untuk Make.com
       const object = {
         nama: nama,
         email: email,
         whatsapp: whatsapp,
         nama_bisnis: bisnis,
         jenis_bisnis: jenis,
-        goals: goals
+        goals: goals,
+        paket_pilihan: paketDipilih // Data paket yang diteruskan ke Webhook
       };
-      const json = JSON.stringify(object);
 
-      // Webhook URL Make.com
       const makeWebhookUrl = 'https://hook.us2.make.com/4vtgoqnejwgljgac77k90g147l3c2w3f';
 
       fetch(makeWebhookUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: json
+          body: JSON.stringify(object)
       })
       .then(response => {
           if (response.ok) {
-              output.innerHTML = "<p class='text-success'>Data terhasil terkirim! Membuka WhatsApp...</p>";
+              output.innerHTML = "<p class='text-success'>Data berhasil terkirim! Membuka WhatsApp...</p>";
               
               const phoneNumber = "628112311550";
+              
+              // Logika Teks Paket untuk WA
+              const teksPaketWA = paketDipilih ? "*Paket Pilihan:* " + paketDipilih + "\n" : "";
+
               const textWA = "Halo GMeta Creative Studio! 👋\n\n" +
                              "Saya baru saja mengisi form konsultasi di website.\n" +
                              "*Nama:* " + nama + "\n" +
                              "*WhatsApp:* " + whatsapp + "\n" +
                              "*Bisnis:* " + bisnis + " (" + jenis + ")\n" +
+                             teksPaketWA + 
                              "*Goals:* " + (goals || "Belum dipilih") + "\n\n" +
                              "Mohon info lebih lanjut ya!";
               
@@ -392,6 +398,9 @@
               }, 1000);
               
               form.reset();
+              paketDipilih = ""; // Reset pilihan paket setelah kirim
+              document.getElementById('formTitle').innerHTML = "Mulai Konsultasi Gratis";
+              document.getElementById('formTitle').classList.remove('text-primary');
           } else {
               output.innerHTML = "<p class='text-danger'>Terjadi kesalahan saat mengirim ke server.</p>";
           }
